@@ -1,0 +1,35 @@
+menu "Pinscope"
+
+    config PINSCOPE_KCONFIG
+        bool
+        default y
+
+    config PINSCOPE_PROJECT_KEY
+        string "Project key"
+        default ""
+        help
+            Copied from the dashboard. The same key goes into every device of
+            a project; each device registers itself on first connect.
+
+    config PINSCOPE_DEVICE_NAME
+        string "Device name"
+        default ""
+
+    config PINSCOPE_LOCAL_PORT
+        int "Local port to expose"
+        range 1 65535
+        default 80
+
+    config PINSCOPE_LOG_CAPTURE
+        bool "Forward Pinscope's own log lines"
+        default y
+
+    config PINSCOPE_SYSTEM_METRICS
+        bool "Built-in metrics"
+        default y
+
+    config PINSCOPE_METRICS_INTERVAL
+        int "Seconds between metrics"
+        default 60
+
+endmenu
